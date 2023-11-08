@@ -6,9 +6,10 @@ import librosa
 X_data = []  # 特徴行列
 y_data = []  # クラスラベルデータ
 
-for speaker_num in range(1, 101):  # 声優No.1~100
+for speaker_num in range(1, 107):  # line1~106
     # parallel100の音声データが入っているディレクトリ名
-    dir_name = f'./jvs_ver1/jvs{str(speaker_num).zfill(3)}/parallel100/wav24kHz16bit'
+    # dir_name = f'./jvs_ver1/jvs{str(speaker_num).zfill(3)}/parallel100/wav24kHz16bit'
+    dir_name = f'./audio/rec-ojii'
     for file_name in os.listdir(dir_name):
         file_path = os.path.join(dir_name, file_name)  # 音声ファイルへのパス
         y, sr = librosa.load(file_path)  # 音声ファイルを読み込む

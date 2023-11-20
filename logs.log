@@ -9295,3 +9295,1445 @@ ValueError: Got predict_proba of shape (14, 1), but need classifier with two cla
                      metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
                      weights='uniform')
 2023-11-16 10:43:50,846:INFO:compare_models() successfully completed......................................
+2023-11-20 10:03:20,002:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,004:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,004:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,005:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,478:INFO:PyCaret ClassificationExperiment
+2023-11-20 10:03:20,479:INFO:Logging name: clf-default-name
+2023-11-20 10:03:20,480:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-11-20 10:03:20,480:INFO:version 3.2.0
+2023-11-20 10:03:20,480:INFO:Initializing setup()
+2023-11-20 10:03:20,481:INFO:self.USI: 3b33
+2023-11-20 10:03:20,481:INFO:self._variable_keys: {'exp_id', 'exp_name_log', 'log_plots_param', 'y_train', 'y_test', 'y', 'target_param', 'data', 'X_test', 'USI', 'gpu_param', 'seed', 'memory', 'fold_generator', 'fix_imbalance', 'pipeline', 'is_multiclass', 'idx', 'X_train', 'html_param', 'fold_groups_param', '_available_plots', 'X', 'gpu_n_jobs_param', 'logging_param', 'fold_shuffle_param', '_ml_usecase', 'n_jobs_param'}
+2023-11-20 10:03:20,481:INFO:Checking environment
+2023-11-20 10:03:20,481:INFO:python_version: 3.8.18
+2023-11-20 10:03:20,482:INFO:python_build: ('default', 'Nov  1 2023 14:38:12')
+2023-11-20 10:03:20,482:INFO:machine: x86_64
+2023-11-20 10:03:20,483:INFO:platform: Linux-5.15.133.1-microsoft-standard-WSL2-x86_64-with-glibc2.34
+2023-11-20 10:03:20,484:INFO:Memory: svmem(total=8139022336, available=6680449024, percent=17.9, used=1145720832, free=1944166400, active=2636378112, inactive=2688188416, buffers=210386944, cached=4838748160, shared=5611520, slab=563097600)
+2023-11-20 10:03:20,486:INFO:Physical Core: 4
+2023-11-20 10:03:20,486:INFO:Logical Core: 8
+2023-11-20 10:03:20,487:INFO:Checking libraries
+2023-11-20 10:03:20,487:INFO:System:
+2023-11-20 10:03:20,487:INFO:    python: 3.8.18 (default, Nov  1 2023, 14:38:12)  [GCC 12.2.0]
+2023-11-20 10:03:20,488:INFO:executable: /usr/local/bin/python
+2023-11-20 10:03:20,488:INFO:   machine: Linux-5.15.133.1-microsoft-standard-WSL2-x86_64-with-glibc2.34
+2023-11-20 10:03:20,488:INFO:PyCaret required dependencies:
+2023-11-20 10:03:20,506:INFO:                 pip: 23.0.1
+2023-11-20 10:03:20,507:INFO:          setuptools: 57.5.0
+2023-11-20 10:03:20,507:INFO:             pycaret: 3.2.0
+2023-11-20 10:03:20,508:INFO:             IPython: 8.12.3
+2023-11-20 10:03:20,508:INFO:          ipywidgets: 8.1.1
+2023-11-20 10:03:20,509:INFO:                tqdm: 4.66.1
+2023-11-20 10:03:20,509:INFO:               numpy: 1.24.4
+2023-11-20 10:03:20,509:INFO:              pandas: 1.5.3
+2023-11-20 10:03:20,510:INFO:              jinja2: 3.1.2
+2023-11-20 10:03:20,510:INFO:               scipy: 1.10.1
+2023-11-20 10:03:20,510:INFO:              joblib: 1.3.2
+2023-11-20 10:03:20,511:INFO:             sklearn: 1.2.2
+2023-11-20 10:03:20,511:INFO:                pyod: 1.1.2
+2023-11-20 10:03:20,511:INFO:            imblearn: 0.11.0
+2023-11-20 10:03:20,511:INFO:   category_encoders: 2.6.3
+2023-11-20 10:03:20,511:INFO:            lightgbm: 4.1.0
+2023-11-20 10:03:20,512:INFO:               numba: 0.58.1
+2023-11-20 10:03:20,512:INFO:            requests: 2.31.0
+2023-11-20 10:03:20,512:INFO:          matplotlib: 3.6.0
+2023-11-20 10:03:20,512:INFO:          scikitplot: 0.3.7
+2023-11-20 10:03:20,512:INFO:         yellowbrick: 1.5
+2023-11-20 10:03:20,513:INFO:              plotly: 5.18.0
+2023-11-20 10:03:20,513:INFO:    plotly-resampler: Not installed
+2023-11-20 10:03:20,513:INFO:             kaleido: 0.2.1
+2023-11-20 10:03:20,513:INFO:           schemdraw: 0.15
+2023-11-20 10:03:20,513:INFO:         statsmodels: 0.14.0
+2023-11-20 10:03:20,514:INFO:              sktime: 0.21.1
+2023-11-20 10:03:20,514:INFO:               tbats: 1.1.3
+2023-11-20 10:03:20,514:INFO:            pmdarima: 2.0.4
+2023-11-20 10:03:20,514:INFO:              psutil: 5.9.6
+2023-11-20 10:03:20,514:INFO:          markupsafe: 2.1.3
+2023-11-20 10:03:20,514:INFO:             pickle5: Not installed
+2023-11-20 10:03:20,515:INFO:         cloudpickle: 3.0.0
+2023-11-20 10:03:20,515:INFO:         deprecation: 2.1.0
+2023-11-20 10:03:20,515:INFO:              xxhash: 3.4.1
+2023-11-20 10:03:20,515:INFO:           wurlitzer: 3.0.3
+2023-11-20 10:03:20,515:INFO:PyCaret optional dependencies:
+2023-11-20 10:03:20,539:INFO:                shap: Not installed
+2023-11-20 10:03:20,539:INFO:           interpret: Not installed
+2023-11-20 10:03:20,539:INFO:                umap: Not installed
+2023-11-20 10:03:20,540:INFO:     ydata_profiling: Not installed
+2023-11-20 10:03:20,540:INFO:  explainerdashboard: Not installed
+2023-11-20 10:03:20,540:INFO:             autoviz: Not installed
+2023-11-20 10:03:20,541:INFO:           fairlearn: Not installed
+2023-11-20 10:03:20,541:INFO:          deepchecks: Not installed
+2023-11-20 10:03:20,541:INFO:             xgboost: Not installed
+2023-11-20 10:03:20,541:INFO:            catboost: Not installed
+2023-11-20 10:03:20,542:INFO:              kmodes: Not installed
+2023-11-20 10:03:20,542:INFO:             mlxtend: Not installed
+2023-11-20 10:03:20,542:INFO:       statsforecast: Not installed
+2023-11-20 10:03:20,542:INFO:        tune_sklearn: Not installed
+2023-11-20 10:03:20,543:INFO:                 ray: Not installed
+2023-11-20 10:03:20,543:INFO:            hyperopt: Not installed
+2023-11-20 10:03:20,543:INFO:              optuna: Not installed
+2023-11-20 10:03:20,543:INFO:               skopt: Not installed
+2023-11-20 10:03:20,543:INFO:              mlflow: Not installed
+2023-11-20 10:03:20,544:INFO:              gradio: Not installed
+2023-11-20 10:03:20,544:INFO:             fastapi: Not installed
+2023-11-20 10:03:20,544:INFO:             uvicorn: Not installed
+2023-11-20 10:03:20,544:INFO:              m2cgen: Not installed
+2023-11-20 10:03:20,544:INFO:           evidently: Not installed
+2023-11-20 10:03:20,545:INFO:               fugue: Not installed
+2023-11-20 10:03:20,545:INFO:           streamlit: Not installed
+2023-11-20 10:03:20,545:INFO:             prophet: Not installed
+2023-11-20 10:03:20,545:INFO:None
+2023-11-20 10:03:20,545:INFO:Set up GPU usage.
+2023-11-20 10:03:20,546:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,546:WARNING:cuML is outdated or not found. Required version is >=23.08.
+                Please visit https://rapids.ai/install for installation instructions.
+2023-11-20 10:03:20,546:INFO:Set up data.
+2023-11-20 10:03:20,552:INFO:Set up folding strategy.
+2023-11-20 10:03:20,553:INFO:Set up train/test split.
+2023-11-20 10:03:20,556:INFO:Set up index.
+2023-11-20 10:03:20,556:INFO:Assigning column types.
+2023-11-20 10:03:20,559:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-11-20 10:03:20,559:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,591:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-20 10:03:20,592:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,594:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,595:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-11-20 10:03:20,596:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,612:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,616:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,618:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,638:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,639:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,670:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-20 10:03:20,671:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,671:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,673:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-11-20 10:03:20,673:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,690:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,695:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,696:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,701:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,702:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-11-20 10:03:20,703:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,736:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,737:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,738:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-11-20 10:03:20,739:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,755:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,758:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,760:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,765:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,766:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,800:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,801:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,802:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-11-20 10:03:20,803:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,819:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,823:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,824:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,830:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,831:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2023-11-20 10:03:20,831:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,861:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,862:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,863:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,878:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,881:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,882:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,888:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,888:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,922:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,923:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,924:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,939:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,943:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:20,945:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,950:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:20,953:INFO:Preparing preprocessing pipeline...
+2023-11-20 10:03:20,955:INFO:Set up simple imputation.
+2023-11-20 10:03:20,972:INFO:Finished creating preprocessing pipeline.
+2023-11-20 10:03:20,977:INFO:Pipeline: Pipeline(memory=FastMemory(location=/tmp/joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['mfcc_1', 'mfcc_2', 'mfcc_3',
+                                             'mfcc_4', 'mfcc_5', 'mfcc_6',
+                                             'mfcc_7', 'mfcc_8', 'mfcc_9',
+                                             'mfcc_10', 'mfcc_11', 'mfcc_12'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='mean',
+                                                              verbose='deprecated'))),
+                ('categorical_imputer',
+                 TransformerWrapper(exclude=None, include=[],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent',
+                                                              verbose='deprecated')))],
+         verbose=False)
+2023-11-20 10:03:20,982:INFO:Creating final display dataframe.
+2023-11-20 10:03:21,030:INFO:Setup _display_container:                     Description             Value
+0                    Session id              1549
+1                        Target            target
+2                   Target type            Binary
+3           Original data shape         (210, 13)
+4        Transformed data shape         (210, 13)
+5   Transformed train set shape         (147, 13)
+6    Transformed test set shape          (63, 13)
+7              Numeric features                12
+8                    Preprocess              True
+9               Imputation type            simple
+10           Numeric imputation              mean
+11       Categorical imputation              mode
+12               Fold Generator   StratifiedKFold
+13                  Fold Number                 5
+14                     CPU Jobs                -1
+15                      Use GPU              True
+16               Log Experiment             False
+17              Experiment Name  clf-default-name
+18                          USI              3b33
+2023-11-20 10:03:21,034:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,065:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,067:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,068:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,083:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,087:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,089:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:21,094:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:21,095:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,127:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,128:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,129:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,148:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,152:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-20 10:03:21,153:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:21,158:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-11-20 10:03:21,159:INFO:setup() successfully completed in 0.69s...............
+2023-11-20 10:03:21,160:INFO:Initializing compare_models()
+2023-11-20 10:03:21,160:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, include=None, fold=None, round=4, cross_validation=True, sort=Accuracy, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, 'include': None, 'exclude': ['catboost', 'xgboost', 'gbc', 'rf'], 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'Accuracy', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>}, exclude=['catboost', 'xgboost', 'gbc', 'rf'])
+2023-11-20 10:03:21,160:INFO:Checking exceptions
+2023-11-20 10:03:21,163:INFO:Preparing display monitor
+2023-11-20 10:03:21,166:INFO:Initializing Logistic Regression
+2023-11-20 10:03:21,166:INFO:Total runtime is 4.712740580240885e-06 minutes
+2023-11-20 10:03:21,167:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:21,167:INFO:Initializing create_model()
+2023-11-20 10:03:21,168:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=lr, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:21,168:INFO:Checking exceptions
+2023-11-20 10:03:21,169:INFO:Importing libraries
+2023-11-20 10:03:21,169:INFO:Copying training dataset
+2023-11-20 10:03:21,172:INFO:Defining folds
+2023-11-20 10:03:21,173:INFO:Declaring metric variables
+2023-11-20 10:03:21,173:INFO:Importing untrained model
+2023-11-20 10:03:21,174:INFO:Logistic Regression Imported successfully
+2023-11-20 10:03:21,175:INFO:Starting cross validation
+2023-11-20 10:03:21,176:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:21,309:INFO:Calculating mean and std
+2023-11-20 10:03:21,311:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,316:INFO:Uploading results into container
+2023-11-20 10:03:21,317:INFO:Uploading model into container now
+2023-11-20 10:03:21,318:INFO:_master_model_container: 1
+2023-11-20 10:03:21,318:INFO:_display_container: 2
+2023-11-20 10:03:21,319:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=1549, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2023-11-20 10:03:21,319:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:21,380:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:21,381:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,385:INFO:Initializing K Neighbors Classifier
+2023-11-20 10:03:21,386:INFO:Total runtime is 0.0036659797032674154 minutes
+2023-11-20 10:03:21,387:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:21,387:INFO:Initializing create_model()
+2023-11-20 10:03:21,388:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=knn, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:21,388:INFO:Checking exceptions
+2023-11-20 10:03:21,389:INFO:Importing libraries
+2023-11-20 10:03:21,389:INFO:Copying training dataset
+2023-11-20 10:03:21,394:INFO:Defining folds
+2023-11-20 10:03:21,395:INFO:Declaring metric variables
+2023-11-20 10:03:21,396:INFO:Importing untrained model
+2023-11-20 10:03:21,397:INFO:K Neighbors Classifier Imported successfully
+2023-11-20 10:03:21,398:INFO:Starting cross validation
+2023-11-20 10:03:21,399:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:21,668:INFO:Calculating mean and std
+2023-11-20 10:03:21,669:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,672:INFO:Uploading results into container
+2023-11-20 10:03:21,673:INFO:Uploading model into container now
+2023-11-20 10:03:21,674:INFO:_master_model_container: 2
+2023-11-20 10:03:21,674:INFO:_display_container: 2
+2023-11-20 10:03:21,675:INFO:KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
+                     weights='uniform')
+2023-11-20 10:03:21,675:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:21,724:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:21,725:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,732:INFO:Initializing Naive Bayes
+2023-11-20 10:03:21,732:INFO:Total runtime is 0.009437274932861329 minutes
+2023-11-20 10:03:21,733:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:21,734:INFO:Initializing create_model()
+2023-11-20 10:03:21,735:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=nb, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:21,735:INFO:Checking exceptions
+2023-11-20 10:03:21,736:INFO:Importing libraries
+2023-11-20 10:03:21,736:INFO:Copying training dataset
+2023-11-20 10:03:21,740:INFO:Defining folds
+2023-11-20 10:03:21,741:INFO:Declaring metric variables
+2023-11-20 10:03:21,742:INFO:Importing untrained model
+2023-11-20 10:03:21,742:INFO:Naive Bayes Imported successfully
+2023-11-20 10:03:21,743:INFO:Starting cross validation
+2023-11-20 10:03:21,745:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:21,828:INFO:Calculating mean and std
+2023-11-20 10:03:21,829:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,833:INFO:Uploading results into container
+2023-11-20 10:03:21,834:INFO:Uploading model into container now
+2023-11-20 10:03:21,834:INFO:_master_model_container: 3
+2023-11-20 10:03:21,834:INFO:_display_container: 2
+2023-11-20 10:03:21,835:INFO:GaussianNB(priors=None, var_smoothing=1e-09)
+2023-11-20 10:03:21,835:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:21,887:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:21,888:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,892:INFO:Initializing Decision Tree Classifier
+2023-11-20 10:03:21,893:INFO:Total runtime is 0.012118975321451824 minutes
+2023-11-20 10:03:21,894:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:21,895:INFO:Initializing create_model()
+2023-11-20 10:03:21,895:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=dt, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:21,896:INFO:Checking exceptions
+2023-11-20 10:03:21,896:INFO:Importing libraries
+2023-11-20 10:03:21,897:INFO:Copying training dataset
+2023-11-20 10:03:21,899:INFO:Defining folds
+2023-11-20 10:03:21,900:INFO:Declaring metric variables
+2023-11-20 10:03:21,901:INFO:Importing untrained model
+2023-11-20 10:03:21,902:INFO:Decision Tree Classifier Imported successfully
+2023-11-20 10:03:21,903:INFO:Starting cross validation
+2023-11-20 10:03:21,904:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:21,990:INFO:Calculating mean and std
+2023-11-20 10:03:21,991:INFO:Creating metrics dataframe
+2023-11-20 10:03:21,995:INFO:Uploading results into container
+2023-11-20 10:03:21,996:INFO:Uploading model into container now
+2023-11-20 10:03:21,996:INFO:_master_model_container: 4
+2023-11-20 10:03:21,996:INFO:_display_container: 2
+2023-11-20 10:03:21,997:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       random_state=1549, splitter='best')
+2023-11-20 10:03:21,997:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:22,049:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:22,050:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,054:INFO:Initializing SVM - Linear Kernel
+2023-11-20 10:03:22,055:INFO:Total runtime is 0.014813248316446941 minutes
+2023-11-20 10:03:22,055:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:22,056:INFO:Initializing create_model()
+2023-11-20 10:03:22,056:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=svm, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:22,057:INFO:Checking exceptions
+2023-11-20 10:03:22,057:INFO:Importing libraries
+2023-11-20 10:03:22,058:INFO:Copying training dataset
+2023-11-20 10:03:22,060:INFO:Defining folds
+2023-11-20 10:03:22,061:INFO:Declaring metric variables
+2023-11-20 10:03:22,061:INFO:Importing untrained model
+2023-11-20 10:03:22,062:INFO:SVM - Linear Kernel Imported successfully
+2023-11-20 10:03:22,063:INFO:Starting cross validation
+2023-11-20 10:03:22,064:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:22,076:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,092:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,106:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,121:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,136:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,142:INFO:Calculating mean and std
+2023-11-20 10:03:22,143:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,147:INFO:Uploading results into container
+2023-11-20 10:03:22,148:INFO:Uploading model into container now
+2023-11-20 10:03:22,149:INFO:_master_model_container: 5
+2023-11-20 10:03:22,150:INFO:_display_container: 2
+2023-11-20 10:03:22,151:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=1549, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2023-11-20 10:03:22,151:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:22,201:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:22,202:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,206:INFO:Initializing Ridge Classifier
+2023-11-20 10:03:22,207:INFO:Total runtime is 0.017342448234558105 minutes
+2023-11-20 10:03:22,207:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:22,208:INFO:Initializing create_model()
+2023-11-20 10:03:22,208:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=ridge, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:22,208:INFO:Checking exceptions
+2023-11-20 10:03:22,209:INFO:Importing libraries
+2023-11-20 10:03:22,209:INFO:Copying training dataset
+2023-11-20 10:03:22,212:INFO:Defining folds
+2023-11-20 10:03:22,213:INFO:Declaring metric variables
+2023-11-20 10:03:22,215:INFO:Importing untrained model
+2023-11-20 10:03:22,217:INFO:Ridge Classifier Imported successfully
+2023-11-20 10:03:22,219:INFO:Starting cross validation
+2023-11-20 10:03:22,220:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:22,235:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,250:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,265:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,280:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,296:WARNING:/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/usr/local/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pycaret/internal/pipeline.py", line 127, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-11-20 10:03:22,302:INFO:Calculating mean and std
+2023-11-20 10:03:22,303:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,307:INFO:Uploading results into container
+2023-11-20 10:03:22,308:INFO:Uploading model into container now
+2023-11-20 10:03:22,309:INFO:_master_model_container: 6
+2023-11-20 10:03:22,309:INFO:_display_container: 2
+2023-11-20 10:03:22,310:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, positive=False, random_state=1549, solver='auto',
+                tol=0.0001)
+2023-11-20 10:03:22,310:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:22,360:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:22,361:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,365:INFO:Initializing Quadratic Discriminant Analysis
+2023-11-20 10:03:22,366:INFO:Total runtime is 0.01999267339706421 minutes
+2023-11-20 10:03:22,366:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:22,367:INFO:Initializing create_model()
+2023-11-20 10:03:22,367:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=qda, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:22,367:INFO:Checking exceptions
+2023-11-20 10:03:22,368:INFO:Importing libraries
+2023-11-20 10:03:22,368:INFO:Copying training dataset
+2023-11-20 10:03:22,371:INFO:Defining folds
+2023-11-20 10:03:22,372:INFO:Declaring metric variables
+2023-11-20 10:03:22,372:INFO:Importing untrained model
+2023-11-20 10:03:22,373:INFO:Quadratic Discriminant Analysis Imported successfully
+2023-11-20 10:03:22,373:INFO:Starting cross validation
+2023-11-20 10:03:22,374:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:22,454:INFO:Calculating mean and std
+2023-11-20 10:03:22,455:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,458:INFO:Uploading results into container
+2023-11-20 10:03:22,460:INFO:Uploading model into container now
+2023-11-20 10:03:22,460:INFO:_master_model_container: 7
+2023-11-20 10:03:22,461:INFO:_display_container: 2
+2023-11-20 10:03:22,462:INFO:QuadraticDiscriminantAnalysis(priors=None, reg_param=0.0,
+                              store_covariance=False, tol=0.0001)
+2023-11-20 10:03:22,462:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:22,511:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:22,512:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,517:INFO:Initializing Ada Boost Classifier
+2023-11-20 10:03:22,517:INFO:Total runtime is 0.022520971298217774 minutes
+2023-11-20 10:03:22,518:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:22,519:INFO:Initializing create_model()
+2023-11-20 10:03:22,519:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=ada, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:22,520:INFO:Checking exceptions
+2023-11-20 10:03:22,520:INFO:Importing libraries
+2023-11-20 10:03:22,521:INFO:Copying training dataset
+2023-11-20 10:03:22,523:INFO:Defining folds
+2023-11-20 10:03:22,524:INFO:Declaring metric variables
+2023-11-20 10:03:22,524:INFO:Importing untrained model
+2023-11-20 10:03:22,525:INFO:Ada Boost Classifier Imported successfully
+2023-11-20 10:03:22,526:INFO:Starting cross validation
+2023-11-20 10:03:22,527:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:22,905:INFO:Calculating mean and std
+2023-11-20 10:03:22,906:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,910:INFO:Uploading results into container
+2023-11-20 10:03:22,911:INFO:Uploading model into container now
+2023-11-20 10:03:22,912:INFO:_master_model_container: 8
+2023-11-20 10:03:22,912:INFO:_display_container: 2
+2023-11-20 10:03:22,913:INFO:AdaBoostClassifier(algorithm='SAMME.R', base_estimator='deprecated',
+                   estimator=None, learning_rate=1.0, n_estimators=50,
+                   random_state=1549)
+2023-11-20 10:03:22,913:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:22,964:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:22,965:INFO:Creating metrics dataframe
+2023-11-20 10:03:22,970:INFO:Initializing Linear Discriminant Analysis
+2023-11-20 10:03:22,971:INFO:Total runtime is 0.030079849561055503 minutes
+2023-11-20 10:03:22,972:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:22,972:INFO:Initializing create_model()
+2023-11-20 10:03:22,973:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=lda, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:22,973:INFO:Checking exceptions
+2023-11-20 10:03:22,974:INFO:Importing libraries
+2023-11-20 10:03:22,975:INFO:Copying training dataset
+2023-11-20 10:03:22,978:INFO:Defining folds
+2023-11-20 10:03:22,979:INFO:Declaring metric variables
+2023-11-20 10:03:22,980:INFO:Importing untrained model
+2023-11-20 10:03:22,981:INFO:Linear Discriminant Analysis Imported successfully
+2023-11-20 10:03:22,981:INFO:Starting cross validation
+2023-11-20 10:03:22,982:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:23,064:INFO:Calculating mean and std
+2023-11-20 10:03:23,065:INFO:Creating metrics dataframe
+2023-11-20 10:03:23,069:INFO:Uploading results into container
+2023-11-20 10:03:23,070:INFO:Uploading model into container now
+2023-11-20 10:03:23,070:INFO:_master_model_container: 9
+2023-11-20 10:03:23,071:INFO:_display_container: 2
+2023-11-20 10:03:23,071:INFO:LinearDiscriminantAnalysis(covariance_estimator=None, n_components=None,
+                           priors=None, shrinkage=None, solver='svd',
+                           store_covariance=False, tol=0.0001)
+2023-11-20 10:03:23,071:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:23,122:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:23,123:INFO:Creating metrics dataframe
+2023-11-20 10:03:23,127:INFO:Initializing Extra Trees Classifier
+2023-11-20 10:03:23,128:INFO:Total runtime is 0.032698190212249754 minutes
+2023-11-20 10:03:23,129:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:23,129:INFO:Initializing create_model()
+2023-11-20 10:03:23,130:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=et, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:23,130:INFO:Checking exceptions
+2023-11-20 10:03:23,131:INFO:Importing libraries
+2023-11-20 10:03:23,131:INFO:Copying training dataset
+2023-11-20 10:03:23,135:INFO:Defining folds
+2023-11-20 10:03:23,135:INFO:Declaring metric variables
+2023-11-20 10:03:23,136:INFO:Importing untrained model
+2023-11-20 10:03:23,137:INFO:Extra Trees Classifier Imported successfully
+2023-11-20 10:03:23,137:INFO:Starting cross validation
+2023-11-20 10:03:23,139:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:24,590:INFO:Calculating mean and std
+2023-11-20 10:03:24,591:INFO:Creating metrics dataframe
+2023-11-20 10:03:24,594:INFO:Uploading results into container
+2023-11-20 10:03:24,595:INFO:Uploading model into container now
+2023-11-20 10:03:24,595:INFO:_master_model_container: 10
+2023-11-20 10:03:24,596:INFO:_display_container: 2
+2023-11-20 10:03:24,596:INFO:ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='sqrt',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=1549, verbose=0, warm_start=False)
+2023-11-20 10:03:24,596:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:24,644:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:24,645:INFO:Creating metrics dataframe
+2023-11-20 10:03:24,650:INFO:Initializing Light Gradient Boosting Machine
+2023-11-20 10:03:24,650:INFO:Total runtime is 0.05807009935379028 minutes
+2023-11-20 10:03:24,651:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:24,652:INFO:Initializing create_model()
+2023-11-20 10:03:24,652:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=lightgbm, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:24,653:INFO:Checking exceptions
+2023-11-20 10:03:24,653:INFO:Importing libraries
+2023-11-20 10:03:24,654:INFO:Copying training dataset
+2023-11-20 10:03:24,657:INFO:Defining folds
+2023-11-20 10:03:24,657:INFO:Declaring metric variables
+2023-11-20 10:03:24,658:INFO:Importing untrained model
+2023-11-20 10:03:24,659:INFO:Light Gradient Boosting Machine Imported successfully
+2023-11-20 10:03:24,659:INFO:Starting cross validation
+2023-11-20 10:03:24,661:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:24,703:INFO:[LightGBM] [Info] Number of positive: 58, number of negative: 59
+2023-11-20 10:03:24,711:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000062 seconds.
+2023-11-20 10:03:24,711:INFO:You can set `force_col_wise=true` to remove the overhead.
+2023-11-20 10:03:24,712:INFO:[LightGBM] [Info] Total Bins 487
+2023-11-20 10:03:24,712:INFO:[LightGBM] [Info] Number of data points in the train set: 117, number of used features: 12
+2023-11-20 10:03:24,713:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.495726 -> initscore=-0.017094
+2023-11-20 10:03:24,713:INFO:[LightGBM] [Info] Start training from score -0.017094
+2023-11-20 10:03:24,713:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,714:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,714:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,714:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,715:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,715:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,715:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,716:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,716:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,716:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,717:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,717:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,717:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,717:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,718:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,718:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,718:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,718:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,719:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,719:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,719:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,719:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,720:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,720:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,720:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,721:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,721:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,721:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,721:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,722:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,722:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,722:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,722:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,723:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,723:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,723:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,723:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,724:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,725:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,725:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,726:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,726:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,727:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,728:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,728:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,728:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,728:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,729:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,729:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,729:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,730:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,730:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,730:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,731:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,731:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,731:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,731:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,732:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,732:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,732:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,733:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,733:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,733:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,733:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,734:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,734:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,734:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,735:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,735:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,735:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,735:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,736:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,736:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,736:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,736:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,737:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,737:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,737:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,737:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,738:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,738:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,738:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,739:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,739:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,739:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,740:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,740:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,740:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,740:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,741:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,741:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,741:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,741:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,743:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,743:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,744:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,744:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,744:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,744:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,745:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,773:INFO:[LightGBM] [Info] Number of positive: 58, number of negative: 59
+2023-11-20 10:03:24,774:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000055 seconds.
+2023-11-20 10:03:24,774:INFO:You can set `force_col_wise=true` to remove the overhead.
+2023-11-20 10:03:24,774:INFO:[LightGBM] [Info] Total Bins 487
+2023-11-20 10:03:24,775:INFO:[LightGBM] [Info] Number of data points in the train set: 117, number of used features: 12
+2023-11-20 10:03:24,775:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.495726 -> initscore=-0.017094
+2023-11-20 10:03:24,775:INFO:[LightGBM] [Info] Start training from score -0.017094
+2023-11-20 10:03:24,775:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,776:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,776:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,777:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,777:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,777:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,778:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,778:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,778:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,779:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,779:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,779:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,780:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,780:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,780:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,808:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,823:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,827:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,828:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,871:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,872:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,872:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,872:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,872:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,873:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,873:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,873:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,874:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,874:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,874:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,874:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,875:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,888:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,889:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,911:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,916:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,917:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,917:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,917:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,918:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,918:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,918:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,918:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,919:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,919:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,919:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,920:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,920:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,920:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,921:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,921:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,922:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,922:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,922:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,922:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,923:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,923:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,923:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,924:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,924:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,924:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,925:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,925:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,925:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,926:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,926:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,926:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,926:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,927:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,927:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,927:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,927:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,928:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,928:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,929:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,929:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,929:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,930:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,930:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,930:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,931:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,931:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,931:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,931:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,932:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,932:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,932:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,933:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,933:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,933:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,933:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,934:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,934:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,934:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,934:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,935:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,935:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,935:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,935:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,936:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,982:INFO:[LightGBM] [Info] Number of positive: 59, number of negative: 59
+2023-11-20 10:03:24,982:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000054 seconds.
+2023-11-20 10:03:24,982:INFO:You can set `force_col_wise=true` to remove the overhead.
+2023-11-20 10:03:24,983:INFO:[LightGBM] [Info] Total Bins 492
+2023-11-20 10:03:24,983:INFO:[LightGBM] [Info] Number of data points in the train set: 118, number of used features: 12
+2023-11-20 10:03:24,983:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.500000 -> initscore=0.000000
+2023-11-20 10:03:24,984:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,984:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,984:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,985:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,985:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,985:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,985:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,986:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,986:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,986:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,987:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,987:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,987:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,988:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,988:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,988:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,989:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,989:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,989:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,989:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,990:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,990:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,990:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,991:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,991:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,991:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,992:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,992:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,992:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,993:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,993:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,993:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,993:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,994:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,994:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,994:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,995:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,995:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,995:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,995:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,996:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,996:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,997:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,997:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,997:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,997:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,998:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,998:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,998:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,999:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,999:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,999:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:24,999:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,000:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,000:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,000:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,001:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,001:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,001:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,001:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,002:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,002:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,002:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,003:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,003:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,003:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,004:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,004:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,004:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,004:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,005:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,008:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,008:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,009:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,009:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,009:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,010:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,010:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,010:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,011:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,011:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,011:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,012:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,012:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,012:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,013:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,013:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,013:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,014:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,014:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,014:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,014:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,015:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,015:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,015:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,016:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,016:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,016:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,017:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,017:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,040:INFO:[LightGBM] [Info] Number of positive: 59, number of negative: 59
+2023-11-20 10:03:25,041:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000048 seconds.
+2023-11-20 10:03:25,041:INFO:You can set `force_col_wise=true` to remove the overhead.
+2023-11-20 10:03:25,041:INFO:[LightGBM] [Info] Total Bins 492
+2023-11-20 10:03:25,041:INFO:[LightGBM] [Info] Number of data points in the train set: 118, number of used features: 12
+2023-11-20 10:03:25,042:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.500000 -> initscore=0.000000
+2023-11-20 10:03:25,042:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,042:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,043:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,043:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,043:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,044:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,044:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,044:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,045:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,045:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,045:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,045:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,046:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,046:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,047:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,047:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,047:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,047:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,048:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,048:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,048:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,049:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,049:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,049:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,049:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,050:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,050:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,050:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,051:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,051:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,051:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,052:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,052:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,052:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,053:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,054:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,054:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,054:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,055:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,055:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,055:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,055:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,056:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,056:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,056:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,057:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,057:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,057:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,058:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,058:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,058:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,059:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,059:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,059:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,060:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,060:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,060:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,060:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,061:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,061:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,061:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,062:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,062:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,063:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,063:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,064:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,064:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,064:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,064:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,065:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,065:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,065:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,066:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,066:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,066:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,067:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,067:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,067:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,067:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,069:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,069:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,070:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,070:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,070:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,070:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,071:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,071:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,071:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,072:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,072:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,072:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,073:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,073:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,073:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,074:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,074:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,074:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,075:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,075:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,075:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,098:INFO:[LightGBM] [Info] Number of positive: 58, number of negative: 60
+2023-11-20 10:03:25,098:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000051 seconds.
+2023-11-20 10:03:25,099:INFO:You can set `force_col_wise=true` to remove the overhead.
+2023-11-20 10:03:25,099:INFO:[LightGBM] [Info] Total Bins 492
+2023-11-20 10:03:25,099:INFO:[LightGBM] [Info] Number of data points in the train set: 118, number of used features: 12
+2023-11-20 10:03:25,100:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.491525 -> initscore=-0.033902
+2023-11-20 10:03:25,100:INFO:[LightGBM] [Info] Start training from score -0.033902
+2023-11-20 10:03:25,100:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,101:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,101:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,101:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,101:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,102:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,102:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,102:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,103:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,103:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,103:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,104:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,104:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,104:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,104:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,105:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,105:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,105:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,106:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,106:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,106:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,107:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,107:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,108:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,108:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,109:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,109:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,109:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,109:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,110:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,110:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,110:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,111:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,111:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,111:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,112:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,112:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,112:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,112:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,113:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,113:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,114:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,114:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,114:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,115:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,116:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,116:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,117:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,117:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,117:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,118:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,118:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,118:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,118:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,119:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,119:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,119:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,120:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,120:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,120:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,120:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,121:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,121:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,121:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,122:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,122:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,122:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,123:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,123:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,123:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,124:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,124:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,124:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,124:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,125:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,125:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,125:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,126:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,126:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,126:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,127:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,127:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,127:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,128:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,128:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,128:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,129:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,129:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,129:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,130:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,130:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,131:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,131:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,131:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,132:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,132:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,132:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,132:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,133:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,133:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2023-11-20 10:03:25,173:INFO:Calculating mean and std
+2023-11-20 10:03:25,174:INFO:Creating metrics dataframe
+2023-11-20 10:03:25,180:INFO:Uploading results into container
+2023-11-20 10:03:25,181:INFO:Uploading model into container now
+2023-11-20 10:03:25,182:INFO:_master_model_container: 11
+2023-11-20 10:03:25,182:INFO:_display_container: 2
+2023-11-20 10:03:25,183:INFO:LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=1549, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0)
+2023-11-20 10:03:25,183:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:25,241:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:25,241:INFO:Creating metrics dataframe
+2023-11-20 10:03:25,246:INFO:Initializing Dummy Classifier
+2023-11-20 10:03:25,246:INFO:Total runtime is 0.06800220807393392 minutes
+2023-11-20 10:03:25,247:INFO:SubProcess create_model() called ==================================
+2023-11-20 10:03:25,247:INFO:Initializing create_model()
+2023-11-20 10:03:25,247:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=dummy, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7fde38910ac0>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:25,248:INFO:Checking exceptions
+2023-11-20 10:03:25,248:INFO:Importing libraries
+2023-11-20 10:03:25,248:INFO:Copying training dataset
+2023-11-20 10:03:25,251:INFO:Defining folds
+2023-11-20 10:03:25,251:INFO:Declaring metric variables
+2023-11-20 10:03:25,252:INFO:Importing untrained model
+2023-11-20 10:03:25,253:INFO:Dummy Classifier Imported successfully
+2023-11-20 10:03:25,253:INFO:Starting cross validation
+2023-11-20 10:03:25,254:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=1
+2023-11-20 10:03:25,271:WARNING:/usr/local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-11-20 10:03:25,288:WARNING:/usr/local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-11-20 10:03:25,303:WARNING:/usr/local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-11-20 10:03:25,318:WARNING:/usr/local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-11-20 10:03:25,335:WARNING:/usr/local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-11-20 10:03:25,341:INFO:Calculating mean and std
+2023-11-20 10:03:25,342:INFO:Creating metrics dataframe
+2023-11-20 10:03:25,344:INFO:Uploading results into container
+2023-11-20 10:03:25,346:INFO:Uploading model into container now
+2023-11-20 10:03:25,347:INFO:_master_model_container: 12
+2023-11-20 10:03:25,347:INFO:_display_container: 2
+2023-11-20 10:03:25,348:INFO:DummyClassifier(constant=None, random_state=1549, strategy='prior')
+2023-11-20 10:03:25,348:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:25,395:INFO:SubProcess create_model() end ==================================
+2023-11-20 10:03:25,397:INFO:Creating metrics dataframe
+2023-11-20 10:03:25,403:INFO:Initializing create_model()
+2023-11-20 10:03:25,403:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fde6940dbe0>, estimator=SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=1549, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False), fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2023-11-20 10:03:25,404:INFO:Checking exceptions
+2023-11-20 10:03:25,405:INFO:Importing libraries
+2023-11-20 10:03:25,406:INFO:Copying training dataset
+2023-11-20 10:03:25,408:INFO:Defining folds
+2023-11-20 10:03:25,409:INFO:Declaring metric variables
+2023-11-20 10:03:25,410:INFO:Importing untrained model
+2023-11-20 10:03:25,411:INFO:Declaring custom model
+2023-11-20 10:03:25,412:INFO:SVM - Linear Kernel Imported successfully
+2023-11-20 10:03:25,413:INFO:Cross validation set to False
+2023-11-20 10:03:25,414:INFO:Fitting Model
+2023-11-20 10:03:25,422:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=1549, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2023-11-20 10:03:25,423:INFO:create_model() successfully completed......................................
+2023-11-20 10:03:25,480:INFO:_master_model_container: 12
+2023-11-20 10:03:25,481:INFO:_display_container: 2
+2023-11-20 10:03:25,482:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=1549, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2023-11-20 10:03:25,482:INFO:compare_models() successfully completed......................................

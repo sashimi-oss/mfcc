@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from pycaret.classification import *
 
-data = pd.read_csv('./rec-ojii-mfcc.csv')
+data = pd.read_csv('./mfcc.csv')
 data['target'] = data['target'] - 1
 data.head()
 

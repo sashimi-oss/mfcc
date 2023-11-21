@@ -14,3 +14,9 @@ reg = setup(data=data,
            n_jobs=-1)
 
 compare_models(exclude=['catboost', 'xgboost', 'gbc', 'rf'])
+
+model = create_model('lda')
+tuned_model = tune_model(model, optimize = 'AUC')
+evaluate_model(tuned_model)
+final_model = finalize_model(tuned_model)
+pred = predict_model(final_model, data = './audio/voice1/line1')

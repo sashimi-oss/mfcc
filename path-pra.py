@@ -5,3 +5,5 @@ dir_name = f'./audio/'
 print(os.listdir(dir_name))
 audio_name = os.listdir(dir_name)
 
+X_data = []  # 特徴行列
+X_data.append('1')

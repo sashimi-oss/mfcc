@@ -13,7 +13,7 @@ for speaker_num in range(1, 3):  # line1~106じゃないかも
     for file_name in os.listdir(dir_name):
         file_path = os.path.join(dir_name, file_name)  # 音声ファイルへのパス
         y, sr = librosa.load(file_path)  # 音声ファイルを読み込む
-        mfcc = librosa.feature.mfcc(y=y, sr=sr)  # MFCC
+        mfcc = librosa.feature.mfcc(y=y, sr=srmfcc = librosa.feature.mfcc(y=y, sr=sr))  # MFCC
         mfcc = np.average(mfcc, axis=1)  # 時間平均を取る
         mfcc = mfcc.flatten()
         mfcc = mfcc.tolist()

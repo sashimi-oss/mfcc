@@ -13,7 +13,8 @@ reg = setup(data=data,
            fold=5,
            n_jobs=-1)
 
-compare_models(exclude=['catboost', 'xgboost', 'gbc', 'rf'])
+#compare_models(exclude=['catboost', 'xgboost', 'gbc', 'rf'])
+compare_models()
 
 model = create_model('lda')
 tuned_model = tune_model(model, optimize = 'AUC')

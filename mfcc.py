@@ -6,14 +6,14 @@ import librosa
 X_data = []  # 特徴行列
 y_data = []  # クラスラベルデータ
 
-for speaker_num in range(1, 3):  # line1~106じゃないかも
+for speaker_num in range(1, 4):  # line1~106じゃないかも
     # parallel100の音声データが入っているディレクトリ名
     # dir_name = f'./jvs_ver1/jvs{str(speaker_num).zfill(3)}/parallel100/wav24kHz16bit'
     dir_name = f'./audio/voice{speaker_num}'
     for file_name in os.listdir(dir_name):
         file_path = os.path.join(dir_name, file_name)  # 音声ファイルへのパス
         y, sr = librosa.load(file_path)  # 音声ファイルを読み込む
-        mfcc = librosa.feature.mfcc(y=y, sr=srmfcc = librosa.feature.mfcc(y=y, sr=sr))  # MFCC
+        mfcc = librosa.feature.mfcc(y=y, sr=sr)  # MFCC
         mfcc = np.average(mfcc, axis=1)  # 時間平均を取る
         mfcc = mfcc.flatten()
         mfcc = mfcc.tolist()

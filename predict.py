@@ -7,7 +7,7 @@ import my_pycar
 
 
 
-y, sr = librosa.load('./audio/voice1/line1.wav')
+y, sr = librosa.load('./audio/predict_kon_shiragami.wav')
 mfcc = librosa.feature.mfcc(y=y, sr=sr)
 
 mfcc = np.average(mfcc, axis=1)
@@ -17,7 +17,7 @@ mfcc = mfcc[1:13]
 X_data = []
 X_data.append(mfcc)
 y_data = []
-y_data.append('line1')#speakernum
+y_data.append('shiragami')#speakernum
 
 X = pd.DataFrame(X_data, columns=[f'mfcc_{n}' for n in range(1, 13)])
 y = pd.DataFrame({'target': y_data})

@@ -6,7 +6,7 @@ import librosa
 X_data = []  # 特徴行列
 y_data = []  # クラスラベルデータ
 
-for speaker_num in range(1, 4):  # line1~106じゃないかも
+for speaker_num in range(1, 5):  #voice1~4 
     # parallel100の音声データが入っているディレクトリ名
     # dir_name = f'./jvs_ver1/jvs{str(speaker_num).zfill(3)}/parallel100/wav24kHz16bit'
     dir_name = f'./audio/voice{speaker_num}'

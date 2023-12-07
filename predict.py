@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import librosa
 from pycaret.classification import *
-import my_pycar
+import my_pycaret
 
 
 
@@ -28,9 +28,9 @@ df.head()
 #dfって打ったら結果出るのかな？
 
 
-#必要ならmy_pycar.pyの処理をコピペする
-#多分my_pycar.final_modelで行ける気がする
+#必要ならmy_pycaret.pyの処理をコピペする
+#多分my_pycaret.final_modelで行ける気がする
 predict = pd.read_csv('predict.csv')
 
-pred = predict_model(my_pycar.final_model, data = predict)
+pred = predict_model(my_pycaret.final_model, data = predict)
 print(pred)

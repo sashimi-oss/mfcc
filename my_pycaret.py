@@ -16,7 +16,7 @@ reg = setup(data=data,
 #compare_models(exclude=['catboost', 'xgboost', 'gbc', 'rf'])
 compare_models()
 
-model = create_model('lda')
+model = create_model('qda')
 tuned_model = tune_model(model, optimize = 'AUC')
 evaluate_model(tuned_model)
 final_model = finalize_model(tuned_model)

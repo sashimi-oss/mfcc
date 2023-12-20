@@ -16,7 +16,8 @@ def do_get_post():
         # import jano
         # wakati = jano.keisotai_kaiseki(text)
         # return render_template('result.html', text=wakati)
-    return render_template('index.html')
+    text = ['最初の文','中間の文','最後の文']
+    return render_template('index.html', text=text)
 
 
 # ==================================================

@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>ututteiru?</h1>
-    
+    <h1>試しに{{text}}</h1>
+    {% for i in range(text|length) %}
+    <p>{{ text[i] }}</p>
+    {% endfor %}
     <script type="text/javascript" src="{{url_for('static', filename='js/sokudoku-annki.js')}}"></script>
 </body>
 </html>

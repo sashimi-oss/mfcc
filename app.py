@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import result
 
 # ==================================================
 # インスタンス生成
@@ -17,7 +18,8 @@ def do_get_post():
         # wakati = jano.keisotai_kaiseki(text)
         # return render_template('result.html', text=wakati)
     text = ['最初の文','中間の文','最後の文']
-    return render_template('index.html', text=text)
+    preVC = result.preVC
+    return render_template('index.html', text=text, preVC=preVC)
 
 
 # ==================================================

@@ -6,7 +6,6 @@ from pycaret.classification import *
 import my_pycaret
 
 
-
 y, sr = librosa.load('./audio/predict_kon_shiragami.wav')
 mfcc = librosa.feature.mfcc(y=y, sr=sr)
 
@@ -25,11 +24,6 @@ df = pd.concat([X, y], axis=1)
 df.to_csv('predict.csv', index=False)  # csvで保存
 df.head()
 
-#dfって打ったら結果出るのかな？
-
-
-#必要ならmy_pycaret.pyの処理をコピペする
-#多分my_pycaret.final_modelで行ける気がする
 predict = pd.read_csv('predict.csv')
 
 pred = predict_model(my_pycaret.final_model, data = predict)

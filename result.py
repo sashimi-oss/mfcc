@@ -1,8 +1,8 @@
 import predict
 
 print (predict.pred.prediction_label[0])
-if(predict.pred.prediction_label[0] == 2):
-    print ('true')
+# if(predict.pred.prediction_label[0] == 2):
+#     print ('true')
 
 # numbers = input('1から5を入力してください')
 # numbers = int(numbers)
@@ -14,6 +14,7 @@ vcAct = {0:"おじいさん（長塚さん）", 1:"おばあさん（高野先�
 
 if numbers in vcAct:
     preVC = vcAct[numbers]
-    print(preVC)
 else:
     print("エラー")
+
+print(preVC)

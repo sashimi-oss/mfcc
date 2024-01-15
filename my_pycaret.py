@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from pycaret.classification import *
+import pickle
 
 data = pd.read_csv('./mfcc.csv')
 data['target'] = data['target'] - 1
@@ -22,3 +23,7 @@ evaluate_model(tuned_model)
 final_model = finalize_model(tuned_model)
 
 predict_model(final_model)
+
+#学習モデルの保存
+with open('model.pickle', mode='wb') as f:
+    pickle.dump(final_model,f,protocol=2)

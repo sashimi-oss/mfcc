@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    <h1>{{preVC}}</h1>
-    <h1>test</h1>
     <h1>試しに{{text}}</h1>
-    {% for i in range(text|length) %}
-    <p>{{ text[i] }}</p>
-    {% endfor %}
+    <!-- {#% for i in range(text|length) %#} -->
+    <!-- <p>{{ text[i] }}</p> -->
+    <!-- {#% endfor %#} -->
+
+    <form action="/" method="post">
+        <input type="file" name="file">
+        <input type="submit">
+    </form>
     <script type="text/javascript" src="{{url_for('static', filename='js/sokudoku-annki.js')}}"></script>
 </body>
 </html>

@@ -3,8 +3,10 @@ import numpy as np
 import pandas as pd
 import librosa
 from pycaret.classification import *
-import my_pycaret
+import pickle
 
+with open('model.pickle', mode='rb') as f:
+    final_model = pickle.load(f)
 
 y, sr = librosa.load('./audio/predict_kon_shiragami.wav')
 mfcc = librosa.feature.mfcc(y=y, sr=sr)
@@ -16,7 +18,7 @@ mfcc = mfcc[1:13]
 X_data = []
 X_data.append(mfcc)
 y_data = []
-y_data.append('shiragami')#speakernum
+y_data.append('speaker')#speakernum
 
 X = pd.DataFrame(X_data, columns=[f'mfcc_{n}' for n in range(1, 13)])
 y = pd.DataFrame({'target': y_data})
@@ -26,5 +28,5 @@ df.head()
 
 predict = pd.read_csv('predict.csv')
 
-pred = predict_model(my_pycaret.final_model, data = predict)
+pred = predict_model(final_model, data = predict)
 print(pred)

@@ -8,6 +8,7 @@ import pickle
 with open('model.pickle', mode='rb') as f:
     final_model = pickle.load(f)
 
+
 y, sr = librosa.load('./audio/predict_kon_shiragami.wav')
 mfcc = librosa.feature.mfcc(y=y, sr=sr)
 

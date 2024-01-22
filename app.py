@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template
-import result
+from flask import Flask, request, render_template, url_for, redirect
+import os, predictFunction
 
 # ==================================================
 # インスタンス生成
@@ -10,8 +10,10 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def do_get_post():
     if request.method == 'POST':
-        preVC = result.preVC
-        file = request.form['file']
+        # preVC = result.preVC
+        file = request.files['file']
+        file.save(os.path.join('./audio', 'uploaded.wav'))
+        preVC = predictFunction.predictPostAudio()
         #音声データとして受け取るにはどうしたらよい？
         # text = request.form.get('text')
         # cmd = f"python ./jano.py {name}"
@@ -20,6 +22,7 @@ def do_get_post():
         # import jano
         # wakati = jano.keisotai_kaiseki(text)
         return render_template('result.html', preVC=preVC, file=file)
+        # return redirect(url_for('result', preVC = preVC, file = file))
     text = ['最初の文','中間の文','最後の文']
     return render_template('index.html', text=text)
 

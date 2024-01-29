@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
+    <a href="/">戻る</a>
     <h1>{{preVC}}</h1>
-    <h1>{{file}}</h1>
-    <h1>{{file.filename}}</h1>
-    <script type="text/javascript" src="{{url_for('static', filename='js/sokudoku-annki.js')}}"></script>
+    <!-- <h1>{#{file}#}</h1>
+    <h1>{#{file.filename}#}</h1> -->
+    <script type="text/javascript" src="{{url_for('static', filename='js/recorder.js')}}"></script>
 </body>
 </html>

@@ -16,8 +16,16 @@
         <input type="file" name="file">
         <input type="submit">
     </form>
-    <h1>MediaRecorder Example</h1>
-    <button id="startRecording">Start Recording</button>
-    <script type="text/javascript" src="{{url_for('static', filename='js/mediaRecorder.js')}}"></script>
+
+    <button id="start">Start</button>
+    <button id="stop" disabled>Stop</button>
+    <a id="download">Download</a>
+
+
+
+
+
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/recorder.js')}}"></script>
 </body>
 </html>

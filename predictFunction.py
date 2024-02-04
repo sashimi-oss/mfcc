@@ -4,11 +4,15 @@ import pandas as pd
 import librosa
 from pycaret.classification import *
 import pickle
+import asyncio
+from prisma import Prisma
 
 with open('model.pickle', mode='rb') as f:
     final_model = pickle.load(f)
 
-def predictPostAudio():
+async def predictPostAudio() -> None:
+    prisma = Prisma()
+    await prisma.connect()
 
     y, sr = librosa.load('./audio/uploaded.wav')
     mfcc = librosa.feature.mfcc(y=y, sr=sr)
@@ -43,4 +47,13 @@ def predictPostAudio():
     else:
         print("エラー")
 
+    await prisma.predict.create(
+        data={
+            'predicted_num' : numbers,
+            'predicted_name' : preVC
+        }
+    )
+
+    await prisma.disconnect()
+    
     return preVC

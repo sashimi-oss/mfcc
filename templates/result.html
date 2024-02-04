@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    <a href="/">戻る</a>
     <h1>話者認識の結果、あなたの声は{{preVC}}と認識されました</h1>
     <h3>{{preVC}}のシナリオを使って練習してみますか？</h3>
     <!-- <h1>{#{file}#}</h1>
-    <h1>{#{file.filename}#}</h1> -->
+        <h1>{#{file.filename}#}</h1> -->
+        <a href="/">戻る</a>
     <script type="text/javascript" src="{{url_for('static', filename='js/recorder.js')}}"></script>
 </body>
 </html>

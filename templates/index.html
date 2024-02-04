@@ -11,19 +11,23 @@
     <!-- {#% for i in range(text|length) %#} -->
     <!-- <p>{{ text[i] }}</p> -->
     <!-- {#% endfor %#} -->
-
-    <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit">
-    </form>
+    <div class="form">
+        <p>話者認識をしたい音声を選んで送信ボタンを押してください</p>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit">
+        </form>
+    </div>
 
     <div class="rec-container">
+        <p>録音は下のStartボタンを押すと行われます</p>
+        <p>Stopボタンを押すと音声がダウンロードされます</p>
         <button id="start">Start</button>
         <button id="stop" disabled>Stop</button>
         <a id="download">Download</a>
     </div>
 
-    <div><a href="#">使い方</a></div>
+    <!-- <div><a href="#">使い方</a></div> -->
 
 
 

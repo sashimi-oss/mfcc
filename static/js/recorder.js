@@ -10,7 +10,7 @@ let scriptProcessor = null;
 let audioData = [];
 let bufferSize = 1024;
 
-let saveAudio = function () {
+let saveAudio = function () {//stop押したときの処理 (stopButton)
   let blob = new Blob([encodeWAV(audioData, audioContext.sampleRate)], { type: 'audio/wav' });
   let url = URL.createObjectURL(blob);
   downloadLink.href = url;
@@ -18,6 +18,30 @@ let saveAudio = function () {
   downloadLink.click();
   audioContext.close();
   stopButton.setAttribute('disabled', 'disabled');
+}
+
+function uploadAudio() {
+  let blob = new Blob([encodeWAV(audioData, audioContext.sampleRate)], { type: 'audio/wav' });
+  
+  // form を動的に生成
+  let form = document.createElement('form');
+  form.action = '/';
+  form.method = 'POST';
+  form.enctype = 'multipart/form-data';
+
+  // body に追加
+  document.body.append(form);
+
+  // formdta イベントに関数を登録(submit する直前に発火)
+  form.addEventListener('formdata', (e) => {
+    let fd = e.formData;
+    
+    // データをセット
+    fd.set('file', blob);
+  });
+
+  // submit
+  form.submit();
 }
 
 // start button
@@ -42,6 +66,7 @@ startButton.addEventListener('click', function () {
 stopButton.addEventListener('click', function () {
   saveAudio();
   console.log('saved wav');
+  uploadAudio();
 });
 
 function encodeWAV(audioData, sampleRate) {
@@ -50,7 +75,7 @@ function encodeWAV(audioData, sampleRate) {
   return dataview;
 }
 
-function mergeBuffers(audioData) {
+function mergeBuffers(audioData) {// encodeWAV関数にて使用
   let totalLength = audioData.reduce((prev, curr) => prev + curr.length, 0);
   let result = new Float32Array(totalLength);
   let offset = 0;
@@ -61,7 +86,7 @@ function mergeBuffers(audioData) {
   return result;
 }
 
-function createDataView(samples, sampleRate) {
+function createDataView(samples, sampleRate) {// encodeWAV関数にて使用
   let buffer = new ArrayBuffer(44 + samples.length * 2);
   let view = new DataView(buffer);
 

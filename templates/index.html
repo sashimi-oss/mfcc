@@ -9,7 +9,7 @@
 <body>
     <!-- <h1>試しに{#{text}#}</h1> -->
     <!-- {#% for i in range(text|length) %#} -->
-    <!-- <p>{{ text[i] }}</p> -->
+    <!-- <p>{#{ text[i] }#}</p> -->
     <!-- {#% endfor %#} -->
     <div class="form">
         <p>話者認識をしたい音声を選んで送信ボタンを押してください</p>
@@ -24,7 +24,7 @@
         <p>Stopボタンを押すと音声がダウンロードされます</p>
         <button id="start">Start</button>
         <button id="stop" disabled>Stop</button>
-        <a id="download">Download</a>
+        <a hidden id="download">Download</a>
     </div>
 
     <!-- <div><a href="#">使い方</a></div> -->

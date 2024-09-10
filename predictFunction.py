@@ -34,6 +34,8 @@ def predictPostAudio():
 
     numbers = pred.prediction_label[0]
 
+    print(numbers)
+
     vcAct = {0:"おじいさん", 1:"おばあさん", 2:"少年(白上虎太郎)",
             3:"男の子(月読ショウタ)", 4:"女の子", 5:"少女",
             6:"青年女", 7:"青年男", 8:"おじさん", 9:"おばさん"}

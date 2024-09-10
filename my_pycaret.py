@@ -9,10 +9,12 @@ data.head()
 
 reg = setup(data=data,
            target='target',
+        #    preprocess=False,
            data_split_shuffle=True,
            use_gpu=True,
            fold=5,
-           n_jobs=-1)
+           n_jobs=-1,
+           )
 
 #compare_models(exclude=['catboost', 'xgboost', 'gbc', 'rf'])
 compare_models()
@@ -25,5 +27,5 @@ final_model = finalize_model(tuned_model)
 predict_model(final_model)
 
 #学習モデルの保存
-with open('model.pickle', mode='wb') as f:
-    pickle.dump(final_model,f,protocol=2)
+with open('women.pickle', mode='wb') as f:
+    pickle.dump(final_model,f,protocol=-1)

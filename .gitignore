@@ -1,1 +1,9 @@
 /jvs_ver1
+/__pycache__
+/logs.log
+/mfcc.csv
+/predict.csv
+/model.pickle
+/all.pickle
+/men.pickle
+/women.pickle

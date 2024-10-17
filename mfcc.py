@@ -6,14 +6,14 @@ import librosa
 X_data = []  # 特徴行列
 y_data = []  # クラスラベルデータ
 
-men = [1,3,4,8,9]
-women = [2,5,6,7,10]
+men = [1,2,3,4,5]
+women = [6,7,8,9,10]
 spkCnt = 0
 # list(map(lambda x : x-1, women)) # 無名関数の書き方
 
-# for speaker_num in range(1, 11):  #voice1~10 
-# for speaker_num in men:  #1,3,4,8,9 
-for speaker_num in women:  #2,5,6,7,10
+for speaker_num in range(1, 11):  #voice1~10 
+# for speaker_num in men:  #1,2,3,4,5
+# for speaker_num in women:  #6,7,8,9,10
     spkCnt += 1
     # parallel100の音声データが入っているディレクトリ名
     # dir_name = f'./jvs_ver1/jvs{str(speaker_num).zfill(3)}/parallel100/wav24kHz16bit'

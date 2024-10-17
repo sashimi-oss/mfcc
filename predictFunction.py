@@ -5,7 +5,7 @@ import librosa
 from pycaret.classification import *
 import pickle
 
-with open('model.pickle', mode='rb') as f:
+with open('all.pickle', mode='rb') as f:
     final_model = pickle.load(f)
 
 def predictPostAudio():
@@ -36,9 +36,10 @@ def predictPostAudio():
 
     print(numbers)
 
-    vcAct = {0:"おじいさん", 1:"おばあさん", 2:"少年(白上虎太郎)",
-            3:"男の子(月読ショウタ)", 4:"女の子", 5:"少女",
-            6:"青年女", 7:"青年男", 8:"おじさん", 9:"おばさん"}
+    vcAct = {0:"男の子", 1:"少年", 2:"青年男",
+            3:"おじさん", 4:"おじいさん", 5:"女の子",
+            6:"少女", 7:"青年女", 8:"おばさん", 9:"おばあさん"}
+    # vcAct = ['男の子', '少年', '青年男', 'おじさん', 'おじいさん', '女の子', '少女', '青年女', 'おばさん', 'おばあさん']
 
     if numbers in vcAct:
         preVC = vcAct[numbers]

@@ -5,7 +5,7 @@ import librosa
 from pycaret.classification import *
 import pickle
 
-with open('model.pickle', mode='rb') as f:
+with open('all.pickle', mode='rb') as f:
     final_model = pickle.load(f)
 
 

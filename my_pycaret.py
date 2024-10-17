@@ -27,5 +27,5 @@ final_model = finalize_model(tuned_model)
 predict_model(final_model)
 
 #学習モデルの保存
-with open('women.pickle', mode='wb') as f:
+with open('all.pickle', mode='wb') as f:
     pickle.dump(final_model,f,protocol=-1)

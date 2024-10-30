@@ -11,9 +11,10 @@ app = Flask(__name__)
 def do_get_post():
     if request.method == 'POST':
         # ポスト送信時の処理
+        whichModel = request.form['whichModel']
         file = request.files['file']
         file.save(os.path.join('./audio', 'uploaded.wav'))
-        preVC = predictFunction.predictPostAudio()
+        preVC = predictFunction.predictPostAudio(whichModel)
 
         return render_template('result.html', preVC=preVC, file=file)
     text = ['最初の文','中間の文','最後の文']
@@ -23,7 +24,8 @@ def do_get_post():
 # ==================================================
 # 実行 
 # flask --app app run -h 0.0.0.0 -p 5001 --cert=adhoc
+# ssl_context=('openssl/server.crt', 'openssl/server.key')
 # ==================================================
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port="5001", ssl_context=('openssl/server.crt', 'openssl/server.key'), threaded=True, debug=True)
+    app.run(host="0.0.0.0", port="5001", threaded=True, debug=True)
 

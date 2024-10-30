@@ -14,6 +14,11 @@
     <div class="form">
         <p>話者認識をしたい音声を選んで送信ボタンを押してください</p>
         <form action="/" method="post" enctype="multipart/form-data">
+            <select name="whichModel" default="all.pickle">
+                <option value="all.pickle">全て</option>
+                <option value="men.pickle">男性</option>
+                <option value="women.pickle">女性</option>
+            </select>
             <input type="file" name="file">
             <input type="submit">
         </form>

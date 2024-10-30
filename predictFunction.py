@@ -5,10 +5,11 @@ import librosa
 from pycaret.classification import *
 import pickle
 
-with open('all.pickle', mode='rb') as f:
-    final_model = pickle.load(f)
 
-def predictPostAudio():
+def predictPostAudio(whichModel):
+
+    with open(whichModel, mode='rb') as f:
+        final_model = pickle.load(f)
 
     y, sr = librosa.load('./audio/uploaded.wav')
     mfcc = librosa.feature.mfcc(y=y, sr=sr)
@@ -34,6 +35,7 @@ def predictPostAudio():
 
     numbers = pred.prediction_label[0]
 
+    print(pred)
     print(numbers)
 
     vcAct = {0:"男の子", 1:"少年", 2:"青年男",

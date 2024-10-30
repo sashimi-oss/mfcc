@@ -8,3 +8,6 @@ COPY ./requirements.txt ./
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN apt-get update
+
+COPY . /app
+CMD ["sh", "build.sh"]

@@ -8,5 +8,6 @@
 # /men.pickle
 # /women.pickle
 /audio/*
+!/audio/.gitkeep
 /audio/.DS_Store
 /.DS_Store

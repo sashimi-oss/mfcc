@@ -37,6 +37,7 @@ function uploadAudio() {
     let fd = e.formData;
     
     // データをセット
+    fd.set('whichModel', 'all.pickle');
     fd.set('file', blob);
   });
 

@@ -6,7 +6,7 @@ from pycaret.classification import *
 import pickle
 
 
-def predictPostAudio(whichModel):
+def predictPostAudio(whichModel='all.pickle'):
 
     with open(whichModel, mode='rb') as f:
         final_model = pickle.load(f)

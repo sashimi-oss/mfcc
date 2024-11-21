@@ -4,6 +4,7 @@
 /mfcc.csv
 /predict.csv
 /model.pickle
+/audio
 # /all.pickle
 # /men.pickle
 # /women.pickle

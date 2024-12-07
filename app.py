@@ -11,7 +11,8 @@ app = Flask(__name__)
 def do_get_post():
     if request.method == 'POST':
         # ポスト送信時の処理
-        whichModel = request.form['whichModel']
+        # whichModel = request.form['whichModel']
+        whichModel = './pickle/sssSumAll.pickle'
         file = request.files['file']
         file.save(os.path.join('./audio', 'uploaded.wav'))
         preVC = predictFunction.predictPostAudio(whichModel)

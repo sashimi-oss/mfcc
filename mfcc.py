@@ -11,15 +11,12 @@ women = [6,7,8,9,10]
 spkCnt = 0
 # list(map(lambda x : x-1, women)) # 無名関数の書き方
 
-for speaker_num in range(1, 11):  #voice1~10 
-# for speaker_num in men:  #1,2,3,4,5
+# for speaker_num in range(1, 11):  #(1, 11)でvoice1~10 
+for speaker_num in men:  #1,2,3,4,5
 # for speaker_num in women:  #6,7,8,9,10
     spkCnt += 1
-    # parallel100の音声データが入っているディレクトリ名
     # dir_name = f'./jvs_ver1/jvs{str(speaker_num).zfill(3)}/parallel100/wav24kHz16bit'
-    # if speaker_num in men:
-    #     continue
-    dir_name = f'./audio/voice{speaker_num}'
+    dir_name = f'./audio/audio_shuuroku_sss/voice{speaker_num}'
     for file_name in os.listdir(dir_name):
         file_path = os.path.join(dir_name, file_name)  # 音声ファイルへのパス
         y, sr = librosa.load(file_path)  # 音声ファイルを読み込む
@@ -27,7 +24,7 @@ for speaker_num in range(1, 11):  #voice1~10
         mfcc = np.average(mfcc, axis=1)  # 時間平均を取る
         mfcc = mfcc.flatten()
         mfcc = mfcc.tolist()
-        mfcc = mfcc[1:13]  # 低次の係数を取り出す（12次まで取り出すことが多い）
+        mfcc = mfcc[1:13]  # 低次の数を取り出す（12次まで取り出すことが多い）
         X_data.append(mfcc)
         y_data.append(spkCnt)
 

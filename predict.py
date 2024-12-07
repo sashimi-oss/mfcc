@@ -9,7 +9,7 @@ with open('all.pickle', mode='rb') as f:
     final_model = pickle.load(f)
 
 
-y, sr = librosa.load('./audio/uploaded.wav')
+y, sr = librosa.load('./audio/uploaded.wav')#変更せな
 mfcc = librosa.feature.mfcc(y=y, sr=sr)
 
 mfcc = np.average(mfcc, axis=1)
